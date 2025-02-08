@@ -3,8 +3,7 @@ if not prime enter all its factors and also print the next prime number. */
 
 #include <iostream>
 using namespace std;
-int main()
-{
+int main(){
     int num;
     cout << "\nEnter a number: ";
     cin >> num;
@@ -12,12 +11,11 @@ int main()
         cout << "Invalid number. Please enter a positive integer.\n";
         return 0;
     }
-
-    // Check if the number is prime
+    // This Part is to check the entered number is prime or not.
     bool isPrime = true;
     for (int i = 2; i <= num / 2; i++){
-        if (num % i == 0)
-        {   isPrime = false;
+        if (num % i == 0){
+            isPrime = false;
             break;
         }
     }
@@ -34,21 +32,22 @@ int main()
         } cout << num << "\n";
     }
 
-    // Finding the next prime number after the entered number
+    //This part is to Find the next prime number after the entered number.
 
     int next = num + 1;
     while (true)
     {    bool isNextPrime = true;
             for (int i = 2; i <= next / 2; i++) {
-            if (next % i == 0)
-            { isNextPrime = false;
-                break; }
+            if (next % i == 0){
+                isNextPrime = false;
+                break; 
+            }
     }
-        if (isNextPrime)
-        {   cout << "The next prime number after " << num << " is " << next << "\n";
-            break; }
+        if (isNextPrime){
+            cout << "The next prime number after " << num << " is " << next << "\n";
+            break; 
+        }
         next++;
         }
-        
         return 0;
 }
